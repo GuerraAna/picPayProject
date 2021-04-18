@@ -1,10 +1,15 @@
 package br.com.picpaycloneproject.ui.dashboard
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class DashboardViewModel : ViewModel() {
+
+    init {
+        Log.i("inicio","inicio")
+    }
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is dashboard Fragment"
