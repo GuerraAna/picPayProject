@@ -3,7 +3,7 @@ package br.com.picpaycloneproject.di
 import br.com.picpaycloneproject.ui.componente.ComponenteViewModel
 import br.com.picpaycloneproject.ui.pagar.PagarViewModel
 import br.com.picpaycloneproject.ui.home.HomeViewModel
-import br.com.picpaycloneproject.ui.notifications.AjusteViewModel
+import br.com.picpaycloneproject.ui.ajuste.AjusteViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

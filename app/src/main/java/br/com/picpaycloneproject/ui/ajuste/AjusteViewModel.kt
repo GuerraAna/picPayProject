@@ -1,4 +1,4 @@
-package br.com.picpaycloneproject.ui.notifications
+package br.com.picpaycloneproject.ui.ajuste
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

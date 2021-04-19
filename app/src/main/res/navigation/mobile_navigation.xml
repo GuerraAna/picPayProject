@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_ajustes"
-        android:name="br.com.picpaycloneproject.ui.notifications.AjusteFragment"
+        android:name="br.com.picpaycloneproject.ui.ajuste.AjusteFragment"
         android:label="@string/title_ajustes"
         tools:layout="@layout/fragment_notifications" />
     <fragment
