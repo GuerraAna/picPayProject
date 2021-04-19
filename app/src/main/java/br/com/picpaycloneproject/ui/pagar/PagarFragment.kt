@@ -7,13 +7,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import br.com.picpaycloneproject.R
 import br.com.picpaycloneproject.data.transacao.Usuario
-import kotlinx.android.synthetic.main.fragment_dashboard.*
+import br.com.picpaycloneproject.data.transacao.UsuarioLogado.usuario
+import kotlinx.android.synthetic.main.fragment_pagar.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class PagarFragment : Fragment() {
 
+    private val controlador by lazy { findNavController() }
     private val pagarViewModel: PagarViewModel by viewModel()
 
     override fun onCreateView(
@@ -21,7 +24,7 @@ class PagarFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        return inflater.inflate(R.layout.fragment_pagar, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,8 +37,13 @@ class PagarFragment : Fragment() {
                 Usuario(login = "Ana", nomeCompleto = "Ana Clara Guerra"),
                 Usuario(login = "Felipe", nomeCompleto = "Felipe Guerra")
         )
-        recyclerView.adapter = PagarAdapter(listOf) {
-
+        recyclerView.adapter = PagarAdapter(listOf) { usuario ->
+            vaiParaTransacao(usuario)
         }
+    }
+
+    private fun vaiParaTransacao(usuario: Usuario) {
+        val direcao = PagarFragmentDirections.actionNavigationPagarToTransacaoFragment(usuario)
+        controlador.navigate(direcao)
     }
 }

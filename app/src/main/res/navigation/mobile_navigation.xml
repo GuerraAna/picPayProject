@@ -16,7 +16,11 @@
         android:id="@+id/navigation_pagar"
         android:name="br.com.picpaycloneproject.ui.pagar.PagarFragment"
         android:label="Pagar"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_pagar" >
+        <action
+            android:id="@+id/action_navigation_pagar_to_transacaoFragment"
+            app:destination="@id/transacaoFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_ajustes"
@@ -39,4 +43,18 @@
         app:destination="@id/loginFragment"
         app:popUpTo="@id/navigation_home"
         app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/transacaoFragment"
+        android:name="br.com.picpaycloneproject.ui.transacao.TransacaoFragment"
+        android:label="TransacaoFragment"
+        tools:layout="@layout/fragment_transacao">
+        <action
+            android:id="@+id/action_transacaoFragment_to_navigation_pagar"
+            app:destination="@id/navigation_pagar"
+            app:popUpTo="@id/transacaoFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="usuario"
+            app:argType="br.com.picpaycloneproject.data.transacao.Usuario" />
+    </fragment>
 </navigation>

@@ -8,7 +8,7 @@ import br.com.picpaycloneproject.R
 import br.com.picpaycloneproject.data.transacao.Usuario
 import kotlinx.android.synthetic.main.item_contato.view.*
 
-class PagarAdapter(private val usuarios: List<Usuario>, private val onClick: () -> Unit): RecyclerView.Adapter<PagarAdapter.ViewHolder>() {
+class PagarAdapter(private val usuarios: List<Usuario>, private val onClick: (Usuario) -> Unit): RecyclerView.Adapter<PagarAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_contato, parent, false)
@@ -28,7 +28,7 @@ class PagarAdapter(private val usuarios: List<Usuario>, private val onClick: () 
                 textViewLogin.text = usuario.login
                 textViewNomeCompleto.text = usuario.nomeCompleto
                 setOnClickListener{
-                    onClick()
+                    onClick(usuario)
                 }
             }
         }
