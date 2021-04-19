@@ -14,14 +14,14 @@
 
     <fragment
         android:id="@+id/navigation_pagar"
-        android:name="br.com.picpaycloneproject.ui.dashboard.DashboardFragment"
+        android:name="br.com.picpaycloneproject.ui.pagar.PagarFragment"
         android:label="Pagar"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="br.com.picpaycloneproject.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:id="@+id/navigation_ajustes"
+        android:name="br.com.picpaycloneproject.ui.notifications.AjusteFragment"
+        android:label="@string/title_ajustes"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/loginFragment"
@@ -30,6 +30,13 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_navigation_home"
-            app:destination="@id/navigation_home" />
-    </fragment><action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment"/>
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/navigation_home"
+        app:popUpToInclusive="true" />
 </navigation>

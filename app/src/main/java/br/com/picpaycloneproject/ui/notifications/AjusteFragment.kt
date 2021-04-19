@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import br.com.picpaycloneproject.R
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class NotificationsFragment : Fragment() {
+class AjusteFragment : Fragment() {
 
-    private val notificationsViewModel: NotificationsViewModel by viewModel()
+    private val notificationsViewModel: AjusteViewModel by viewModel()
 
     override fun onCreateView(
             inflater: LayoutInflater,
