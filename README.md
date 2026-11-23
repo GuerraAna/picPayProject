@@ -59,3 +59,19 @@ Documentação com Swagger 2;
 Monitoramento com Spring Actuador.
 ```
 
+
+## Pré-requisitos
+
+- **JDK 11**
+- Android SDK
+
+> **Nota de build (2026):** `jcenter()` foi descontinuado — mirror do JCenter (Aliyun) adicionado para resolver `koin-android-viewmodel` 2.x.
+
+## Como rodar
+
+```bash
+echo "sdk.dir=$HOME/Library/Android/sdk" > local.properties   # macOS
+./gradlew assembleDebug
+```
+
+O app consome a API do clone (ver seção "API utilizada") — para dados reais, suba o backend ou aponte para um mock.
